@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>E-Learning Application (Scrum Project)</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 850px; margin: 30px auto; padding: 0 16px; background: #f7f9fc; }
+    .card { background: #fff; padding: 18px; border-radius: 8px; margin-bottom: 18px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
+    input, select, button { padding: 8px 12px; margin: 6px 4px 6px 0; border-radius: 5px; border: 1px solid #ccc; }
+    button { background: #1d4ed8; color: #fff; border: none; cursor: pointer; }
+    button:hover { background: #1e40af; }
+    .hidden { display: none; }
+    .course-box { border: 1px solid #e2e8f0; padding: 12px; border-radius: 6px; margin-top: 10px; }
+  </style>
+</head>
+<body>
+  <h1>E-Learning Application</h1>
+  <p>Software Engineering Mini-Project (22IT331) — Scrum Approach</p>
+
+  <!-- Auth Section -->
+  <div id="authSection" class="card">
+    <h2>Login / Register</h2>
+    <input type="text" id="nameInput" placeholder="Full Name (for Register)" />
+    <input type="email" id="emailInput" placeholder="Email" required />
+    <input type="password" id="passwordInput" placeholder="Password" required />
+    <br />
+    <button onclick="registerUser()">Register</button>
+    <button onclick="loginUser()">Login</button>
+    <p id="authMsg"></p>
+  </div>
+
+  <!-- Dashboard Section -->
+  <div id="dashboardSection" class="hidden">
+    <div class="card">
+      <h3>Welcome, <span id="studentName"></span></h3>
+      <p>Completed Quizzes: <strong id="completedCount">0</strong> | Average Score: <strong id="avgScore">0%</strong></p>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="card">
+      <h3>Courses, Lessons & Quizzes</h3>
+      <div id="coursesList"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
